@@ -1,0 +1,49 @@
+@use "../foundation/setting";
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: setting.$dark-blue;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.bg-blue {
+  background: linear-gradient(setting.$light-blue, setting.$blue);
+  width: 100%;
+  height: 100vh;
+  padding: 30px;
+  
+  display: flex;
+  gap: 30px;
+
+  @include setting.big {
+    width: 1500px;
+    margin: auto;
+  }
+
+  @include setting.tab {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  header {
+    width: 15%;
+    min-width: 200px;
+  }
+
+  main {
+    width: 85%;
+    min-height: 700px;
+
+    @include setting.sp {
+      width: 100%;
+    }
+  }
+}

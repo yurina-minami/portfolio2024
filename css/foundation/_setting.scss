@@ -1,0 +1,22 @@
+@mixin big {
+  @media screen and (min-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+$light-blue: #5093c3;
+$blue: #3b6da7;
+$dark-blue: #265a97;
+$shadow-gray: rgba(56, 60, 66, 0.1);

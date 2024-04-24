@@ -1,0 +1,88 @@
+@use "../foundation/setting";
+
+main {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  color: setting.$dark-blue;
+
+  h2 {
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 10px;
+
+    @include setting.sp {
+      font-size: 30px;
+    }
+  }
+
+  h3 {
+    font-weight: normal;
+  }
+
+  .bg-gray {
+    background: linear-gradient(#f2f2f2, #f8f8f8);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 5px 5px 10px setting.$shadow-gray;
+  }
+
+  section {
+    display: none;
+
+    &.active {
+      display: flex;
+      justify-content: space-between;
+      animation: opacityAnime 0.8s forwards;
+
+      @include setting.tab {
+        display: block;
+      }
+    }
+
+    @keyframes opacityAnime {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .text {
+      width: calc(100% - 450px);
+    }
+
+    .images {
+      width: 400px;
+    }
+
+    .left {
+      width: 45%;
+    }
+
+    .right {
+      width: 50%;
+    }
+
+    @include setting.tab {
+      .text, .left, .right {
+        width: 100%;
+      }
+
+      .images {
+        width: 350px;
+        margin: auto;
+        height: 650px;
+      }
+    }
+
+    @include setting.sp {
+      .images {
+        width: 100%;
+      }
+    }
+  }
+}

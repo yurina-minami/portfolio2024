@@ -1,0 +1,120 @@
+@use "../foundation/setting";
+
+section {
+  .text {
+    .point {
+      background: linear-gradient(90deg, setting.$light-blue, setting.$blue);
+      padding: 20px;
+      box-shadow: 5px 5px 10px setting.$shadow-gray;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      color: white;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    a {
+      display: block;
+      background-color: #e4e4e4;
+      padding: 10px 60px 10px 30px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 10px setting.$shadow-gray;
+      color: setting.$dark-blue;
+      word-wrap: break-word;
+      position: relative;
+
+      &::after {
+        content: ">>";
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .images {
+    position: relative;
+
+    img {
+      height: 600px;
+      filter: drop-shadow(5px 5px 15px setting.$shadow-gray);
+      position: absolute;
+      top: 0;
+      animation: slideshow 10s infinite;
+      opacity: 0;
+
+      &:nth-child(2) {
+        animation-delay: 5s;
+      }
+
+      @include setting.tab {
+        top: 30px;
+      }
+    }
+
+    @keyframes slideshow {
+      0% {
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      45% {
+        opacity: 1;
+      }
+      60% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.work6 {
+  padding: 0 30px;
+
+  @include setting.tab {
+    padding: 0;
+  }
+
+  img {
+    width: 220px;
+    height: 630px;
+    filter: drop-shadow(5px 5px 15px setting.$shadow-gray);
+
+    &.width-small {
+      width: 90px;
+    }
+
+    @include setting.tab {
+      width: 40%;
+      height: 400px;
+
+      &.width-small {
+        width: 18%;
+      }
+    }
+  }
+
+  .column {
+    width: 200px;
+
+    img {
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    @include setting.tab {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        width: 30%;
+      }
+    }
+  }
+}
